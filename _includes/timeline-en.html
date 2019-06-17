@@ -1,0 +1,13 @@
+<div id="timeline">
+  <div class="container position-relative">
+    <span class="watermark d-none d-sm-block">MILESTONES</span>
+
+    {% for year in site.data.timeline %}
+    <div class="year-wrapper">
+      <span class="year">{{ year.year }}</span>
+      <span class="circle"><span class="dot"></span></span>
+      <span class="text">{{ year.en }}</span>
+    </div>
+    {% endfor %}
+  </div>
+</div>
