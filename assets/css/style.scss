@@ -762,16 +762,21 @@ body#our_services_page {
 
   .watermark {
     position: absolute;
-    font-size: 20vw;
     text-transform: uppercase;
     color: rgba(255,255,255,0.5);
     transform: rotate(90deg);
-    left: 20vw;
     transform-origin: top left;
     line-height: 1;
     margin-top: 64px;
     font-family: $font-family-sans-serif;
     font-weight: 100;
+
+    font-size: 20vw;
+    left: 22vw;
+    @include media-breakpoint-up(xl) {
+      font-size: 270px;
+      left: 300px;
+    }
   }
 
 

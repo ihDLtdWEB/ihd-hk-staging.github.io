@@ -6,7 +6,7 @@
     <div class="year-wrapper">
       <span class="year">{{ year.year }}</span>
       <span class="circle"><span class="dot"></span></span>
-      <span class="text">{{ year.en }}</span>
+      <span class="text">{% if page.language == 'ch' %}{{ year.ch | markdownify | newline_to_br }}{% else %}{{ year.en | markdownify | newline_to_br }}{% endif %}</span>
     </div>
     {% endfor %}
   </div>
