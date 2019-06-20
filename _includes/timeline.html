@@ -1,12 +1,18 @@
 <div id="timeline">
   <div class="container position-relative">
-    <span class="watermark d-none d-sm-block">MILESTONES</span>
+    <span class="watermark d-none d-sm-block">
+      {% if page.language == 'ch' %} 里程碑 {% else %} MILESTONES {% endif %}
+    </span>
 
     {% for year in site.data.timeline %}
     <div class="year-wrapper">
       <span class="year">{{ year.year }}</span>
       <span class="circle"><span class="dot"></span></span>
-      <span class="text">{% if page.language == 'ch' %}{{ year.ch | markdownify | newline_to_br }}{% else %}{{ year.en | markdownify | newline_to_br }}{% endif %}</span>
+      <span class="text">
+        {% for line in year[page.language] %}
+          {{ line | markdownify }}
+        {% endfor %}
+      </span>
     </div>
     {% endfor %}
   </div>
